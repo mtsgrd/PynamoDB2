@@ -755,6 +755,7 @@ class Connection(object):
         if exclusive_start_key:
             operation_kwargs.update(self.get_exclusive_start_key_map(table_name, exclusive_start_key))
         if index_name:
+            index_name = index_name.replace('_', '-')
             operation_kwargs[pythonic(INDEX_NAME)] = index_name
         if limit is not None:
             operation_kwargs[pythonic(LIMIT)] = limit

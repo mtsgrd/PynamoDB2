@@ -81,7 +81,7 @@ class SetMixin(object):
         Deserializes a set
         """
         if value and len(value):
-            return set([json.loads(val) for val in value])
+            return set([val for val in value])
 
 
 class BinaryAttribute(Attribute):
