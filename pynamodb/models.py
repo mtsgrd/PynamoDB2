@@ -462,6 +462,7 @@ class Model(with_metaclass(MetaModel)):
         last_evaluated_key = data.get(LAST_EVALUATED_KEY, None)
         for item in data.get(ITEMS):
             yield cls.from_raw_data(item)
+        return
         while last_evaluated_key:
             log.debug("Fetching query page with exclusive start key: {0}".format(last_evaluated_key))
             data = cls._get_connection().query(

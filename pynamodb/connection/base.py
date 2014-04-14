@@ -798,7 +798,9 @@ class Connection(object):
                     COMPARISON_OPERATOR: operator
                 }
 
+        print operation_kwargs
         response, data = self.dispatch(QUERY, operation_kwargs)
+        print response, data
         if not response.ok:
             raise QueryError("Failed to query items: {0}".format(response.content))
         return data
