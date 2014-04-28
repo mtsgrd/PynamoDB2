@@ -72,7 +72,7 @@ class SetMixin(object):
         empty sets return None
         """
         if value and len(value):
-            return [json.dumps(val) for val in sorted(value)]
+            return [val for val in sorted(value)]
         else:
             return None
 
